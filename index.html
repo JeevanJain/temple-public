@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seva Sankalpa</title>
+<meta name="description" content="Seva Sankalpa — our website is being rebuilt.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Kannada&family=Tiro+Tamil&family=Tiro+Telugu&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:       #1B2432;
+    --ink-soft:  #4A5568;
+    --paper:     #FBFAF7;
+    --marigold:  #E3A21C;
+    --rule:      #E2DFD6;
+    --measure:   32rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 2rem 1.5rem;
+  }
+
+  main {
+    width: 100%;
+    max-width: var(--measure);
+    margin: 0 auto;
+    align-self: center;
+    padding: 3rem 0;
+  }
+
+  /* The cycling wordmark is the whole design. Everything else stays quiet. */
+  .cycle {
+    display: grid;
+  }
+
+  .cycle > span {
+    grid-area: 1 / 1;          /* stack all three in one cell — no layout shift */
+    font-family: "Tiro Kannada", serif;
+    font-size: clamp(2.75rem, 11vw, 4.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    opacity: 0;
+    animation: cycle 9s infinite;
+  }
+
+  .cycle > .te { font-family: "Tiro Telugu", serif; }
+  .cycle > .ta { font-family: "Tiro Tamil",  serif; }
+
+  .cycle > span:nth-child(1) { animation-delay: 0s; }
+  .cycle > span:nth-child(2) { animation-delay: 3s; }
+  .cycle > span:nth-child(3) { animation-delay: 6s; }
+
+  @keyframes cycle {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    29%  { opacity: 1; }
+    33%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .mark-latin {
+    font-family: "Tiro Kannada", serif;
+    font-size: clamp(1.05rem, 3.6vw, 1.35rem);
+    color: var(--ink-soft);
+    margin: 0.35rem 0 0;
+    letter-spacing: 0.02em;
+  }
+
+  .keyline {
+    width: 3.5rem; height: 3px;
+    background: var(--marigold);
+    border: 0;
+    margin: 2.25rem 0;
+  }
+
+  .note { max-width: 30rem; margin: 0 0 1.15rem; }
+  .note:last-of-type { margin-bottom: 0; }
+
+  a {
+    color: var(--ink);
+    text-decoration-color: var(--marigold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  a:hover { color: var(--ink-soft); }
+  a:focus-visible {
+    outline: 2px solid var(--marigold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  footer {
+    max-width: var(--measure);
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 0.875rem;
+  }
+
+  /* Don't animate for people who ask not to — show one script, held still. */
+  @media (prefers-reduced-motion: reduce) {
+    .cycle > span { animation: none; opacity: 0; }
+    .cycle > span:nth-child(1) { opacity: 1; }
+  }
+
+  @media (max-width: 30rem) {
+    body { padding: 1.5rem 1.25rem; }
+    main { padding: 1.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <!-- Wordmark cycles: Kannada -> Telugu -> Tamil. Edit the text inside each span if the spelling needs adjusting. -->
+  <h1 class="cycle" aria-label="Seva Sankalpa">
+    <span class="kn">ಸೇವಾ ಸಂಕಲ್ಪ</span>
+    <span class="te">సేవా సంకల్ప</span>
+    <span class="ta">சேவா சங்கல்ப</span>
+  </h1>
+  <p class="mark-latin">Seva Sankalpa</p>
+
+  <hr class="keyline">
+
+  <!-- EDIT ME: replace both paragraphs with your own words -->
+  <p class="note">
+    Our website is being rebuilt and will be back here shortly.
+  </p>
+</main>
+
+<footer>
+  Seva Sankalpa
+</footer>
+
+</body>
+</html>
